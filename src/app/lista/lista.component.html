@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h1>Lista de usuarios</h1>
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Fecha de Inscripción</th>
+        <th>Costo</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elemento of elementos">
+        <td>{{ elemento.nombre }}</td>
+        <td>{{ elemento.edad }}</td>
+        <td>{{ elemento.fechaNac }}</td>
+        <td>{{ elemento.fechaIns }}</td>
+        <td>{{ elemento.costo }}</td>
+        <td><button type="button" class="btn btn-primary" [routerLink]="['/formulario', elemento.id]">Editar</button></td>
+        <td><button type="button" class="btn btn-primary" (click)="onDelete(elemento.id)">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary m-2" routerLink="/formulario">Ir Formulario Crear Nuevo</button>
+</div>
+
+
